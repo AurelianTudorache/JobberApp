@@ -1,0 +1,65 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+    background: #eeeeee;
+}
+.main-container {
+    margin: auto;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top: 20px;
+
+} 
+
+.jobs-container {
+    padding-top: 10px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.jobs-card {   
+    margin: 10px;
+    width: 200px;
+    height: 180px;
+}
+
+.mat-card-subtitle {
+    margin-left:-8px;
+} 
+
+@media (min-width: 900px){
+    .main-container{
+        width: 900px;
+    }
+    .jobs-container {
+        width: 900px;
+    }
+}
+/* @media (max-width: 900px){
+    .mini-fab-button {
+        display: none;
+    }
+} */
+
+.mat-card {
+    margin-bottom: 10px;
+}
+.mat-form-field {
+    width: 100%;
+}
+.mat-toolbar h1 {
+    font-size: 25px; 
+    margin: auto;
+}
+.mat-card-title {
+    margin-left:-8px;
+}
+.full-button{
+    width: 100%;
+}
+
+
