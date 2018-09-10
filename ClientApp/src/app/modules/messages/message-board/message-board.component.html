@@ -1,0 +1,43 @@
+<mat-toolbar>
+    <h1>
+      Conversations
+    </h1>
+</mat-toolbar>
+<div class="main-container"> 
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title>Join Job Channel</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field>
+            <mat-select placeholder="Select Job Channel" name="jobGroupName" [(ngModel)]="group">
+              <mat-option *ngFor="let g of (messagesState$|async)?.comms.groups" [value]="g">
+                {{g}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+              <button mat-raised-button color="primary" (click)="join()">Join</button>
+              <button mat-raised-button color="primary" (click)="leave()">Leave</button>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-content>
+            <form (ngSubmit)="sendMessage()" #messageForm="ngForm">
+                <mat-form-field>
+                    <textarea matInput placeholder="Your Message" name="messageText" [(ngModel)]="message.text" matTextareaAutosize></textarea>
+                </mat-form-field>
+                <button type="submit" mat-raised-button color="primary" [disabled]="!messageForm.valid">Send Message to channel</button>
+                <br><br>
+            </form>
+            <mat-chip-list *ngIf="messages?.length > 0">
+                <ng-container *ngFor="let message of messages;">
+                    <mat-chip selected="true" style="width:95%">
+                        {{message.author}} {{message.text}}
+                    </mat-chip>
+                </ng-container>
+            </mat-chip-list>
+            <br>
+            <span *ngIf="messages?.length <= 0">No messages</span>      
+        </mat-card-content>
+      </mat-card>
+</div>

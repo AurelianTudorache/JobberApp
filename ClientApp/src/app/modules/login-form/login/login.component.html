@@ -1,0 +1,31 @@
+<mat-toolbar>
+  <h1>
+        User Login
+  </h1>
+</mat-toolbar>
+<div class="main-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Enter your credentials</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+                <mat-form-field>                      
+                    <input matInput type="text" [formControl]="username" formControlName="username" placeholder="Username or Email address"  [errorStateMatcher]="matcher" />
+                    <mat-error *ngIf="username.hasError('required')">
+                        Please insert a valid username or e-mail address.
+                    </mat-error>                   
+                </mat-form-field>
+
+                <mat-form-field>                  
+                <input matInput type="password" [formControl]="password" formControlName="password" placeholder="Password" [errorStateMatcher]="matcher" />
+                <mat-error *ngIf="password.hasError('required')">
+                    Please insert a password.
+                </mat-error>               
+                </mat-form-field>    
+
+                <button [disabled]="!formOk" mat-raised-button color="primary">LogIn</button>                    
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

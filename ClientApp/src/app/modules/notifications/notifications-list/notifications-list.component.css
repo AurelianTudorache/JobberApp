@@ -1,0 +1,116 @@
+#notifications-main {
+    margin: 0 auto;
+    position: relative
+}
+
+#notifications-main .notifications-list .notifications-row {
+    border-bottom: 1px solid #ddd;
+    padding: 18px 100px 18px 10px;
+    overflow: hidden;
+    background: #fff
+}
+
+#notifications-main .notifications-list .notifications-row .thumbnail {
+    width: 65px;
+    max-height: 65px;
+    float: left;
+    border-radius: 65px;
+    overflow: hidden
+}
+
+#notifications-main .notifications-list .notifications-row .thumbnail img {
+    width: 100%
+}
+
+#notifications-main .notifications-list .notifications-row .post-content {
+    float: right;
+    width: calc(100% - 75px);
+    position: relative
+}
+
+#notifications-main .notifications-list .notifications-row .post-content p.description {
+    font-size: 16px;
+    color: #191a19
+}
+
+#notifications-main .notifications-list .notifications-row .post-content .date {
+    color: #a2a2a2
+}
+
+#notifications-main .notifications-list .notifications-row .post-content::first-letter {
+    text-transform: uppercase
+}
+
+#notifications-main .notifications-list .notifications-row .post-content .delete-item {
+    position: absolute;
+    top: 16px;
+    right: -75px;
+    opacity: .3;
+    display: block;
+    cursor: pointer;
+    width: 32px;
+    height: 36px
+}
+
+#notifications-main .notifications-list .notifications-row .post-content .delete-item .mw-icon-trash {
+    height: 32px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 26px;
+    background-image: url("/assets/img/icon-trash-gray.png")
+}
+
+#notifications-main .notifications-list .notifications-row.new {
+    background: #f0f0f0
+}
+
+#notifications-main .notifications-list .notifications-row.new .delete-item {
+    display: none
+}
+
+#notifications-main #load-more {
+    border: 0;
+    padding: 0 10px;
+    font-size: 12px;
+    cursor: pointer;
+    width: 150px;
+    margin: 30px auto;
+    color: #fff;
+    text-transform: uppercase;
+    display: block
+}
+
+#notifications-main #back-to-top {
+    position: absolute;
+    right: -75px;
+    bottom: 100px;
+    opacity: 0
+}
+
+#notifications-main #back-to-top:hover {
+    cursor: pointer;
+    opacity: 1
+}
+
+.hidden {
+    display: none !important
+}
+
+@media (max-width: 767px) {
+    #notifications-main {
+        width: 90%
+    }
+}
+
+@media (min-width: 768px) {
+    #notifications-main {
+        width: 70%
+    }
+}
+
+@media (min-width: 1024px) {
+    #notifications-main {
+        width: 40%
+    }
+}

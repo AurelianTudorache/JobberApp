@@ -1,0 +1,43 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Business Details
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <!-- <button mat-raised-button type="button" color="warn">Logo Upload</button> -->
+    <form (ngSubmit)="submit()" [formGroup]="form">
+      <mat-form-field>
+        <input matInput placeholder="Company Name" type="text" formControlName="companyName" [formControl]="companyNameFC" [errorStateMatcher]="matcher">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Company Email" type="text" formControlName="companyEmail" [formControl]="companyEmailFC" [errorStateMatcher]="matcher">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="City" type="text" formControlName="hqCity" [formControl]="hqCityFC" [errorStateMatcher]="matcher">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Street" type="text" formControlName="hqStreet" [formControl]="hqStreetFC" [errorStateMatcher]="matcher">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Building" type="text" formControlName="hqBuilding" [formControl]="hqBuildingFC" [errorStateMatcher]="matcher">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Postal Code" type="text" formControlName="hqPostalCode" [formControl]="hqPostalCodeFC" [errorStateMatcher]="matcher">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Company Number" type="text" formControlName="companyNumber" [formControl]="companyNumberFC" [errorStateMatcher]="matcher">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="VAT Number" type="text" formControlName="vatNumber" [formControl]="vatNumberFC" [errorStateMatcher]="matcher">
+      </mat-form-field>   
+      <button class="full-button" [disabled]="!formOk" mat-raised-button color="primary">Update</button>  
+    </form>
+
+  </mat-expansion-panel>

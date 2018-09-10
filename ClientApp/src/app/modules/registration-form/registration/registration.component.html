@@ -1,0 +1,59 @@
+<mat-toolbar>
+        <h1>
+           New User Registration
+        </h1>
+</mat-toolbar>
+<div class="main-container">
+
+        <mat-card>
+                <mat-card-header>
+                        <mat-card-title>Enter your credentials</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                        <form (ngSubmit)="onSubmit()" [formGroup]="form">
+                                <mat-form-field>
+                                        <input matInput type="text" [formControl]="username" placeholder="Insert username..." formControlName="username" [errorStateMatcher]="matcher" />
+                                        <mat-error *ngIf="username.hasError('required')">
+                                                Please insert a valid username.
+                                        </mat-error>
+                                </mat-form-field>
+
+                                <mat-form-field>
+                                        <input matInput type="text" [formControl]="email" placeholder="Insert e-mail..." formControlName="email" [errorStateMatcher]="matcher" />
+                                        <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+                                                Please insert a valid e-mail address.
+                                        </mat-error>
+                                        <mat-error *ngIf="email.hasError('required')">
+                                                Email is <strong>required</strong>
+                                        </mat-error>
+                                </mat-form-field>
+
+                                <mat-form-field>
+                                        <input matInput type="password" [formControl]="password" placeholder="Insert password..." formControlName="password" [errorStateMatcher]="matcher" />
+                                        <mat-error *ngIf="password.hasError('required')">
+                                                Password is required.
+                                        </mat-error>
+                                </mat-form-field>
+                                <mat-form-field>
+                                        <input matInput type="password" [formControl]="passwordConfirm" placeholder="Insert password..." formControlName="passwordConfirm" [errorStateMatcher]="matcher" />
+                                        <mat-error *ngIf="!passwordConfirm.hasError('required') && passwordConfirm.hasError('confirmPassword')">
+                                                Password Mismatch.
+                                        </mat-error>
+                                        <mat-error *ngIf="passwordConfirm.hasError('required')">
+                                                Confirming password is required.
+                                        </mat-error>
+                                </mat-form-field>
+                                <mat-form-field>
+                                        <input matInput type="text" [formControl]="displayName" placeholder="Choose a Display Name..." formControlName="displayName" [errorStateMatcher]="matcher" />
+                                        <mat-error *ngIf="displayName.hasError('required')">
+                                                Please insert a valid display name.
+                                        </mat-error>
+                                </mat-form-field>
+                                <div style="display: flex">
+                                        <button style="flex: 1" [disabled]="!formOk" mat-raised-button color="primary">Register</button>
+                                        <button style="flex: 1" type="button" (click)="onBack()" mat-raised-button color="warn">Cancel</button>
+                                </div>
+                        </form>
+                </mat-card-content>
+        </mat-card>
+</div>

@@ -1,0 +1,24 @@
+.demo-tab-group {
+    border: 1px solid #e8e8e8;
+  }
+  
+.tab-content {   
+    position: relative;
+    flex-wrap: wrap;
+    overflow: hidden;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: auto;
+}
+
+.card {
+    max-width: 200px;
+    max-height: 200px;   
+    margin: 15px;
+}
+  
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}

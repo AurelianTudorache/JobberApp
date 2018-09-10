@@ -1,0 +1,52 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Manage Card
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+    <form (ngSubmit)="submit()" [formGroup]="form">
+      <mat-form-field>
+        <input matInput type="text" placeholder="Name on Card" formControlName="nameOnCard" [formControl]="nameOnCardFC" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="nameOnCardFC.hasError('required')">
+          The field is required.
+       </mat-error>   
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Card Type" formControlName="cardType" [formControl]="cardTypeFC" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="cardTypeFC.hasError('required')">
+          The field is required.
+       </mat-error> 
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Card Number" formControlName="cardNumber" [formControl]="cardNumberFC" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="cardNumberFC.hasError('required')">
+          The field is required.
+       </mat-error> 
+       <mat-error *ngIf="cardNumberFC.hasError('pattern')">
+          Input must be a number, min & max length equal with 16.
+       </mat-error>
+      </mat-form-field>
+      <mat-form-field style="width: 33%">
+        <input matInput type="text" placeholder="Exp Month" formControlName="expMonth" [formControl]="expMonthFC" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="expMonthFC.hasError('required')">
+          The field is required.
+       </mat-error> 
+      </mat-form-field>
+      <mat-form-field style="width: 33%">
+        <input matInput type="text" placeholder="Exp Year" formControlName="expYear" [formControl]="expYearFC" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="expYearFC.hasError('required')">
+          The field is required.
+       </mat-error> 
+      </mat-form-field>
+      <mat-form-field style="width: 33%"> 
+        <input matInput type="text" placeholder="CVC" formControlName="cvc" [formControl]="cvcFC" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="cvcFC.hasError('required')">
+          The field is required.
+       </mat-error> 
+       <mat-error *ngIf="cvcFC.hasError('pattern')">
+          Input must be a number, min & max length equal with three.
+       </mat-error>
+      </mat-form-field>
+      <button class="full-button" [disabled]="!formOk" mat-raised-button color="primary">Update</button>    
+    </form>
+</mat-expansion-panel>

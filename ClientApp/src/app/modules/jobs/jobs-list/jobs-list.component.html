@@ -1,0 +1,19 @@
+<mat-toolbar>
+    <h1>
+      Jobs
+    </h1>
+</mat-toolbar>    
+<mat-tab-group>
+  <mat-tab label="Posted">
+    <app-jobs-posted></app-jobs-posted>
+  </mat-tab>
+  <mat-tab label="Assigned">
+    <app-jobs-filled></app-jobs-filled>
+  </mat-tab>
+  <!-- <mat-tab label="In Progress">
+    <app-jobs-today></app-jobs-today>
+  </mat-tab> -->
+  <mat-tab label="Completed">
+    <app-jobs-completed></app-jobs-completed>
+  </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,91 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Locations
+      </mat-panel-title>
+    </mat-expansion-panel-header>  
+    <mat-table #table [dataSource]="dataSource">  
+
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="street">
+        <mat-header-cell *matHeaderCellDef> Street </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.street}} </mat-cell>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="building">
+        <mat-header-cell *matHeaderCellDef> Building </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.building}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="city">
+        <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.city}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Actions</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button (click)="togglePanel(element)" mat-icon-button color="primary" type="button">      
+              <mat-icon matTooltip="Edit" [matTooltipPosition]="position">edit</mat-icon>    
+          </button>
+          <button style="margin-left: 5px;" mat-icon-button color="warn" (click)="delete(element.id)" type="button">
+              <mat-icon matTooltip="Delete" [matTooltipPosition]="position">delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    </mat-table>
+    <br>
+    <br>
+   
+    <mat-accordion>
+      <mat-expansion-panel [expanded]="panelOpenState">
+        <mat-expansion-panel-header>
+        <mat-panel-title>
+          Add or Edit Location
+        </mat-panel-title>
+      </mat-expansion-panel-header> 
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <mat-form-field>
+        <input matInput placeholder="Location Name" formControlName="name" [formControl]="name" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="name.hasError('required')">
+          Location name is requered.
+        </mat-error>
+      </mat-form-field>  
+      <mat-form-field>
+        <input matInput placeholder="City" formControlName="city" [formControl]="city" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="city.hasError('required')">
+          City name is requered.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Street" formControlName="street" [formControl]="street" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="street.hasError('required')">
+          Street name is requered.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Building" formControlName="building" [formControl]="building" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="building.hasError('required')">
+          Building is requered.
+        </mat-error>
+      </mat-form-field>
+
+      <button class="full-button" [disabled]="!formOk" mat-raised-button color="primary">Save</button>  
+    </form>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </mat-expansion-panel>
