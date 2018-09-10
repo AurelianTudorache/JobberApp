@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4lHC4sINVEuOomQkHLyj3QAAAAACAAAAAAAQZgAAAAEAACAAAADQjcY749S05obTt0FMUrRF7nj+IMS8olVXotfDySeU8wAAAAAOgAAAAAIAACAAAAC+6o2Vh7nVx1KZbV6inSUMKT/vO30xXLBRc5XwJCfF9YAAAACCvt43W48UZR1ypl0bHqtKbHPU+j0GAZ0rL9VtsEDpjoBpRdH6oRSlh3QcrD6243wqCJ1XTIEsxApMcrkqmdJUnZb0tA8EqCX5VRQEOWB9PD16ovO0Tp/eUZuTKihbU1DCF+E7dvJMjCYwMBZ2+pUb8tn8nD1OsQVMLPEz7hD6qkAAAAAz1Hju/rNYxHwAZahQBJloEMwHMISSf0NA6jk2OKFTSPzofQaI+Rzcnjy8K6ICFnv0bY1RlT3ULUCqJindlV70</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <EFMigrations Include="DailyWorker.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:jobberappdbserver.database.windows.net,1433;Initial Catalog=Jobberapp_db;User Id=Aurelian@jobberappdbserver;Password=Similar_1</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

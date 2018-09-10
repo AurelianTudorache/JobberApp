@@ -1,0 +1,271 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+
+    <!-- Set this to true if you enable server-side prerendering -->
+    <BuildServerSideRenderer>false</BuildServerSideRenderer>
+    <AssemblyName>JobberApp</AssemblyName>
+    <RootNamespace>JobberApp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="4.0.0" />
+    <PackageReference Include="Mapster" Version="3.1.8" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="2.0.0-preview1-final" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.1.0-preview1-final" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Content Remove="$(SpaRoot)**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\e2e\app.e2e-spec.ts" />
+    <None Remove="ClientApp\e2e\app.po.ts" />
+    <None Remove="ClientApp\src\app\app.component.ts" />
+    <None Remove="ClientApp\src\app\app.error-handler.ts" />
+    <None Remove="ClientApp\src\app\app.module.ts" />
+    <None Remove="ClientApp\src\app\components\navigation\navigation.component.spec.ts" />
+    <None Remove="ClientApp\src\app\components\navigation\navigation.component.ts" />
+    <None Remove="ClientApp\src\app\counter\counter.component.spec.ts" />
+    <None Remove="ClientApp\src\app\counter\counter.component.ts" />
+    <None Remove="ClientApp\src\app\fetch-data\fetch-data.component.ts" />
+    <None Remove="ClientApp\src\app\home\home.component.ts" />
+    <None Remove="ClientApp\src\app\modules\account\account-routing.module.ts" />
+    <None Remove="ClientApp\src\app\modules\account\account.module.ts" />
+    <None Remove="ClientApp\src\app\modules\account\login-form\login-form.component.spec.ts" />
+    <None Remove="ClientApp\src\app\modules\account\login-form\login-form.component.ts" />
+    <None Remove="ClientApp\src\app\modules\account\registration-form\registration-form.component.spec.ts" />
+    <None Remove="ClientApp\src\app\modules\account\registration-form\registration-form.component.ts" />
+    <None Remove="ClientApp\src\app\modules\add-new\add-new-form\add-new-form.component.spec.ts" />
+    <None Remove="ClientApp\src\app\modules\add-new\add-new-form\add-new-form.component.ts" />
+    <None Remove="ClientApp\src\app\modules\add-new\add-new-routing.module.ts" />
+    <None Remove="ClientApp\src\app\modules\add-new\add-new.module.ts" />
+    <None Remove="ClientApp\src\app\modules\jobs\jobs-completed\jobs-completed.component.spec.ts" />
+    <None Remove="ClientApp\src\app\modules\jobs\jobs-completed\jobs-completed.component.ts" />
+    <None Remove="ClientApp\src\app\modules\jobs\jobs-filled\jobs-filled.component.spec.ts" />
+    <None Remove="ClientApp\src\app\modules\jobs\jobs-filled\jobs-filled.component.ts" />
+    <None Remove="ClientApp\src\app\modules\jobs\jobs-list\jobs-list.component.spec.ts" />
+    <None Remove="ClientApp\src\app\modules\jobs\jobs-list\jobs-list.component.ts" />
+    <None Remove="ClientApp\src\app\modules\jobs\jobs-posted\jobs-posted.component.spec.ts" />
+    <None Remove="ClientApp\src\app\modules\jobs\jobs-posted\jobs-posted.component.ts" />
+    <None Remove="ClientApp\src\app\modules\jobs\jobs-routing.module.ts" />
+    <None Remove="ClientApp\src\app\modules\jobs\jobs-today\jobs-today.component.spec.ts" />
+    <None Remove="ClientApp\src\app\modules\jobs\jobs-today\jobs-today.component.ts" />
+    <None Remove="ClientApp\src\app\modules\jobs\jobs.module.ts" />
+    <None Remove="ClientApp\src\app\modules\login-form\login-form-routing.module.ts" />
+    <None Remove="ClientApp\src\app\modules\login-form\login-form.module.ts" />
+    <None Remove="ClientApp\src\app\modules\login-form\login\login.component.spec.ts" />
+    <None Remove="ClientApp\src\app\modules\login-form\login\login.component.ts" />
+    <None Remove="ClientApp\src\app\modules\messages\message-board\message-board.component.spec.ts" />
+    <None Remove="ClientApp\src\app\modules\messages\message-board\message-board.component.ts" />
+    <None Remove="ClientApp\src\app\modules\messages\messages-routing.module.ts" />
+    <None Remove="ClientApp\src\app\modules\messages\messages.module.ts" />
+    <None Remove="ClientApp\src\app\modules\notifications\notifications-list\notifications-list.component.spec.ts" />
+    <None Remove="ClientApp\src\app\modules\notifications\notifications-list\notifications-list.component.ts" />
+    <None Remove="ClientApp\src\app\modules\notifications\notifications-routing.module.ts" />
+    <None Remove="ClientApp\src\app\modules\notifications\notifications.module.ts" />
+    <None Remove="ClientApp\src\app\modules\registration-form\registration-form-routing.module.ts" />
+    <None Remove="ClientApp\src\app\modules\registration-form\registration-form.module.ts" />
+    <None Remove="ClientApp\src\app\modules\registration-form\registration\registration.component.spec.ts" />
+    <None Remove="ClientApp\src\app\modules\registration-form\registration\registration.component.ts" />
+    <None Remove="ClientApp\src\app\modules\reports\reports-routing.module.ts" />
+    <None Remove="ClientApp\src\app\modules\reports\reports.module.ts" />
+    <None Remove="ClientApp\src\app\modules\reports\reports\reports.component.spec.ts" />
+    <None Remove="ClientApp\src\app\modules\reports\reports\reports.component.ts" />
+    <None Remove="ClientApp\src\app\modules\settings\settings-list\settings-list.component.spec.ts" />
+    <None Remove="ClientApp\src\app\modules\settings\settings-list\settings-list.component.ts" />
+    <None Remove="ClientApp\src\app\modules\settings\settings-page\settings-page.component.ts" />
+    <None Remove="ClientApp\src\app\modules\settings\settings-routing.module.ts" />
+    <None Remove="ClientApp\src\app\modules\settings\settings.module.ts" />
+    <None Remove="ClientApp\src\app\modules\timesheets\timesheets-routing.module.ts" />
+    <None Remove="ClientApp\src\app\modules\timesheets\timesheets.module.ts" />
+    <None Remove="ClientApp\src\app\modules\timesheets\timesheets\timesheets.component.spec.ts" />
+    <None Remove="ClientApp\src\app\modules\timesheets\timesheets\timesheets.component.ts" />
+    <None Remove="ClientApp\src\app\nav-menu\nav-menu.component.ts" />
+    <None Remove="ClientApp\src\app\shared\interfaces\conversation.ts" />
+    <None Remove="ClientApp\src\app\shared\interfaces\employee.ts" />
+    <None Remove="ClientApp\src\app\shared\interfaces\employer.ts" />
+    <None Remove="ClientApp\src\app\shared\interfaces\location.ts" />
+    <None Remove="ClientApp\src\app\shared\interfaces\message.ts" />
+    <None Remove="ClientApp\src\app\shared\interfaces\SaveMessage.ts" />
+    <None Remove="ClientApp\src\app\shared\interfaces\skill.ts" />
+    <None Remove="ClientApp\src\app\shared\interfaces\token.response.ts" />
+    <None Remove="ClientApp\src\app\shared\interfaces\tokenresponse.ts" />
+    <None Remove="ClientApp\src\app\shared\interfaces\use1r.ts" />
+    <None Remove="ClientApp\src\app\shared\interfaces\user-login.ts" />
+    <None Remove="ClientApp\src\app\shared\interfaces\user-registration.ts" />
+    <None Remove="ClientApp\src\app\shared\interfaces\user.ts" />
+    <None Remove="ClientApp\src\app\shared\modules\angular-material-components\angular-material-components.module.ts" />
+    <None Remove="ClientApp\src\app\shared\modules\angular-material-components\formfield.statematcher.ts" />
+    <None Remove="ClientApp\src\app\shared\modules\angular-material-components\GlobalFormFieldStateMatcher.ts" />
+    <None Remove="ClientApp\src\app\shared\modules\angular-material-components\SharedFormFieldStateMatcher.ts" />
+    <None Remove="ClientApp\src\app\shared\modules\app-routing\app-routing.module.ts" />
+    <None Remove="ClientApp\src\app\shared\modules\SharedFormFieldStateMatcher.ts" />
+    <None Remove="ClientApp\src\app\shared\services\auth-interceptor.service.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\services\auth-interceptor.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\auth-interceptor.ts" />
+    <None Remove="ClientApp\src\app\shared\services\auth.guard.ts" />
+    <None Remove="ClientApp\src\app\shared\services\auth.response.interceptor.ts" />
+    <None Remove="ClientApp\src\app\shared\services\auth.service.spec.ts" />
+    <None Remove="ClientApp\src\app\shared\services\auth.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\auth.ts" />
+    <None Remove="ClientApp\src\app\shared\services\rest.service.ts" />
+    <None Remove="ClientApp\src\environments\environment.prod.ts" />
+    <None Remove="ClientApp\src\environments\environment.ts" />
+    <None Remove="ClientApp\src\main.ts" />
+    <None Remove="ClientApp\src\polyfills.ts" />
+    <None Remove="ClientApp\src\test.ts" />
+    <None Remove="ClientApp\src\typings.d.ts" />
+    <None Remove="ClientApp\tsconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ClientApp\tsconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\e2e\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="ClientApp\e2e\app.po.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\app.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\app.error-handler.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\app.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\components\navigation\navigation.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\components\navigation\navigation.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\counter\counter.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\counter\counter.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\fetch-data\fetch-data.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home\home.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\account\account-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\account\account.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\account\login-form\login-form.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\account\login-form\login-form.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\account\registration-form\registration-form.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\account\registration-form\registration-form.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\add-new\add-new-form\add-new-form.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\add-new\add-new-form\add-new-form.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\add-new\add-new-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\add-new\add-new.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\jobs\jobs-completed\jobs-completed.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\jobs\jobs-completed\jobs-completed.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\jobs\jobs-filled\jobs-filled.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\jobs\jobs-filled\jobs-filled.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\jobs\jobs-list\jobs-list.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\jobs\jobs-list\jobs-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\jobs\jobs-posted\jobs-posted.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\jobs\jobs-posted\jobs-posted.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\jobs\jobs-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\jobs\jobs-today\jobs-today.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\jobs\jobs-today\jobs-today.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\jobs\jobs.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\login-form\login-form-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\login-form\login-form.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\login-form\login\login.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\login-form\login\login.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\messages\message-board\message-board.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\messages\message-board\message-board.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\messages\messages-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\messages\messages.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\notifications\notifications-list\notifications-list.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\notifications\notifications-list\notifications-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\notifications\notifications-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\notifications\notifications.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\registration-form\registration-form-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\registration-form\registration-form.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\registration-form\registration\registration.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\registration-form\registration\registration.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\reports\reports-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\reports\reports.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\reports\reports\reports.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\reports\reports\reports.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\settings\settings-list\settings-list.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\settings\settings-list\settings-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\settings\settings-page\settings-page.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\settings\settings-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\settings\settings.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\timesheets\timesheets-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\timesheets\timesheets.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\timesheets\timesheets\timesheets.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\timesheets\timesheets\timesheets.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\nav-menu\nav-menu.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\interfaces\conversation.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\interfaces\employee.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\interfaces\employer.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\interfaces\location.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\interfaces\message.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\interfaces\SaveMessage.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\interfaces\skill.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\interfaces\token.response.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\interfaces\tokenresponse.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\interfaces\use1r.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\interfaces\user-login.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\interfaces\user-registration.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\interfaces\user.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\modules\angular-material-components\angular-material-components.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\modules\angular-material-components\formfield.statematcher.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\modules\angular-material-components\GlobalFormFieldStateMatcher.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\modules\angular-material-components\SharedFormFieldStateMatcher.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\modules\app-routing\app-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\modules\SharedFormFieldStateMatcher.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\auth-interceptor.service.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\auth-interceptor.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\auth-interceptor.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\auth.guard.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\auth.response.interceptor.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\auth.service.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\auth.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\auth.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\rest.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="ClientApp\src\environments\environment.ts" />
+    <TypeScriptCompile Include="ClientApp\src\main.ts" />
+    <TypeScriptCompile Include="ClientApp\src\polyfills.ts" />
+    <TypeScriptCompile Include="ClientApp\src\test.ts" />
+    <TypeScriptCompile Include="ClientApp\src\typings.d.ts" />
+  </ItemGroup>
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build -- --prod" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build:ssr -- --prod" Condition=" '$(BuildServerSideRenderer)' == 'true' " />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+      <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+</Project>

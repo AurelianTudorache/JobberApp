@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4lHC4sINVEuOomQkHLyj3QAAAAACAAAAAAAQZgAAAAEAACAAAAB+ptxko5ZFpWX2pqph1ICK8zt4RXz6YBjixKVKXKR3UgAAAAAOgAAAAAIAACAAAABATA1srolF3HhIepHC4jWuhXmNHMqt32ZN1yyom8S/SoAAAAB21giLxaTJjFe0i6J1exv/YiLJQD+XH8wVmKXUKlnveg+iqnMYKkmBcMJzOn8EcT3lYbSMg5pfdppaVKqwdGyah0U6V8bB2UMPtyOEdtKOsh5Q46qfBZH6y8Oznh5IWQf4pTmd7VRBmTqLdnvlVsGOnYv+GPkUJPUmmpdIKyyGRUAAAAA38lrfBRxcQopjZ4Jd9okgKt2qhOT8R2arRWkEN0zBKXajj/aYyQRoJM2PQhlVCx+HCdJWmBmXlWMH0eoqegYz</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:jobberappdbserver.database.windows.net,1433;Initial Catalog=JobberApp_db;User Id=Aurelian@jobberappdbserver;Password=Similar_1</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="JobberApp.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:jobberappdbserver.database.windows.net,1433;Initial Catalog=JobberApp_db;User Id=Aurelian@jobberappdbserver;Password=Similar_1</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
