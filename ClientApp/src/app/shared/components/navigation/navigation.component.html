@@ -1,0 +1,101 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+
+<mat-toolbar color="primary" class="example-toolbar">
+
+  <button *ngIf="this.auth.isLoggedIn()" [class.hide-menu-button]="!mobileQuery.matches" mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+
+  <span style="margin-right: 1%; margin-left: 8px;">JobberApp</span>
+
+  <div *ngIf="this.auth.isLoggedIn()" class="mini-fab-button">
+    <button mat-mini-fab color="warn" [routerLink]="['/add-new']">
+      <div matTooltip="Create Job" [matTooltipPosition]="position">
+        <mat-icon>add</mat-icon>
+      </div>
+    </button>
+    <button mat-mini-fab color="warn" [routerLink]="['/jobs']">
+      <div matTooltip="Jobs" [matTooltipPosition]="position">
+        <mat-icon>check</mat-icon>
+      </div>
+    </button>
+    <button mat-mini-fab color="warn" [routerLink]="['/reports']">
+      <div matTooltip="Reports" [matTooltipPosition]="position">
+        <mat-icon>assessment</mat-icon>
+      </div>
+    </button>
+    <button mat-mini-fab color="warn" [routerLink]="['/timesheets']">
+      <div matTooltip="TimeSheets" [matTooltipPosition]="position">
+        <mat-icon>access_time</mat-icon>
+      </div>
+    </button>
+    <button mat-mini-fab color="warn" [routerLink]="['/notifications']">
+      <div matTooltip="Notifications" [matTooltipPosition]="position">
+        <mat-icon>notifications</mat-icon>
+      </div>
+    </button>
+    <button mat-mini-fab color="warn" [routerLink]="['/messages']">
+      <div matTooltip="Messages" [matTooltipPosition]="position">
+        <mat-icon>message</mat-icon>
+      </div>
+    </button>
+  </div>
+ 
+  <span class="mat-spacer"></span>
+  <button mat-button *ngIf="!this.auth.isLoggedIn()" [routerLink]="['/register']">Register</button>
+  <button mat-button *ngIf="!this.auth.isLoggedIn()" [routerLink]="['/login']">Login</button>
+  
+  <div *ngIf="this.auth.isLoggedIn()" style="font-size:16px;">
+    <b>Hi, </b>{{ auth.displayName }}
+  </div>
+
+  <div matTooltip="Menu" [matTooltipPosition]="position">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </div>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngIf="this.auth.isLoggedIn()" (click)="logout()">
+      <mat-icon>dialpad</mat-icon>
+      <span>Logout</span>
+    </button>
+    <button mat-menu-item *ngIf="this.auth.isLoggedIn()" [routerLink]="['/settings']">
+      <mat-icon>voicemail</mat-icon>
+      <span>Settings</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>ContactUs</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 60 : 0">
+  <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="60">
+    <mat-nav-list (click)="snav.close()" *ngIf="this.auth.isLoggedIn()">
+      <mat-list-item [routerLink]="['/add-new']" [routerLinkActive]="['link-active']">
+        <a><mat-icon class="mat-icon-sidenav">add</mat-icon>Create Job</a>
+      </mat-list-item>
+      <mat-list-item [routerLink]="['/jobs']" [routerLinkActive]="['link-active']">
+        <a><mat-icon class="mat-icon-sidenav">check</mat-icon>Jobs</a>
+      </mat-list-item>
+      <mat-list-item [routerLink]="['/reports']" [routerLinkActive]="['link-active']">
+        <a><mat-icon class="mat-icon-sidenav">assessment</mat-icon>Reports</a>
+      </mat-list-item>
+      <mat-list-item [routerLink]="['/timesheets']" [routerLinkActive]="['link-active']">
+        <a><mat-icon class="mat-icon-sidenav">access_time</mat-icon>Timesheets</a>
+      </mat-list-item>
+      <mat-list-item [routerLink]="['/notifications']" [routerLinkActive]="['link-active']">
+        <a><mat-icon class="mat-icon-sidenav">notifications</mat-icon>Notifications</a>
+      </mat-list-item>
+      <mat-list-item [routerLink]="['/messages']" [routerLinkActive]="['link-active']">
+        <a><mat-icon class="mat-icon-sidenav">message</mat-icon>Messages</a>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>  
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+</div>
+

@@ -1,0 +1,55 @@
+.mat-mini-fab {
+  margin-left: 20px;
+}
+.mat-spacer {
+  flex: 1 1 auto;
+}
+.mat-icon {
+  font-size: 23px;
+}
+/deep/ .mat-tooltip {
+  font-size: 13px;
+}
+.example-toolbar {
+  height: 80px;
+}
+
+.hide-menu-button {
+  display: none;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-is-mobile .example-toolbar {
+  height: 60px;
+  position: fixed;
+  z-index: 2;
+}
+
+.example-sidenav-container {
+  flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+  flex: 1 0 auto;
+}
+
+.example-is-mobile .example-toolbar .mini-fab-button {
+  display: none;
+}
+
+.mat-icon-sidenav {
+  margin-right: 10px;
+  color: rgb(63, 63, 63);
+  font-size: 1.4rem;
+  display: inline-block;
+  vertical-align: middle;
+}
